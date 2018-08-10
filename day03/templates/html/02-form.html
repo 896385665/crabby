@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body>
+    <form method="POST">
+        <lable>用 户 名：</lable><input type="text" name="username"> <br>
+        <lable>密    码：</lable><input type="password" name="password"> <br>
+        <lable>确认密码：</lable><input type="password" name="refirmpwd"> <br>
+        <input type="submit" value="提交">  <br>
+        <hr>
+        {#使用遍历获取闪现的消息#}
+        {% for message in get_flashed_messages() %}
+            {{ message }}
+        {% endfor %}
+    </form>
+
+
+</body>
+</html>

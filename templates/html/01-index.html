@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+这是模板 <br>
+只是首页 <br>
+{{ url_str }} <br>
+{{ url_list }} <br>
+{{ url_list.2 }} <br>
+{{ url_dict }} <br>
+{{ url_dict.url }} <br>
+{{ url_int + url_list.1 }}
+<hr>
+{%  for num in url_list %}
+    {{ num }},
+{% endfor%}
+<hr>
+{{ url_str | upper}} <br>
+{{ url_str | reverse}} <br>
+{{ url_str | reverse | upper | title}} <br>
+{{ url_str | lireverse}} <br>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>temp</title>
+</head>
+<body>
+{{ werty }}
+<ul>
+    {# for 后面的条件如果成立，那么就会执行 for 循环内部的代码 #}
+    {% for item in my_list if item.id != 5 %}
+        {% if loop.index == 1 %}  {# 代码当前循环第1个元素(从1开始) #}
+            <li style="background: orange">{{ item['value'] }}</li>
+        {% elif loop.index == 2 %}
+            <li style="background: green">{{ item['value'] }}</li>
+        {% elif loop.index == 3 %}
+            <li style="background: red">{{ item['value'] }}</li>
+        {% else %}
+            <li style="background: purple">{{ item['value'] }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+</body>
+</html>

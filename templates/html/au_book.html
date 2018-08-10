@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book main page</title>
+</head>
+<body>
+    <form method="post">
+        {{ form.csrf_token }}
+        <p>作者：{{ form.au_info }}</p>
+        <p>书名：{{ form.bk_info }}</p>
+        <p>{{ form.submit }}</p>
+    </form>
+    {#使用遍历获取闪现的消息#}
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+    <hr>
+    <ul style="background: burlywood">
+        {% for au in author %}
+            <li>
+                {{ au }}  <a href="/deleteAuthor/{{ au.id }}">删除</a>
+                <ul style="background: #de91be; color: #5e5fff;">
+                    {% for bk in book if bk.author_id == au.id%}
+                        <li>{{ bk.name }}  <a href="/deleteBook/{{ bk.id }}">删除</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

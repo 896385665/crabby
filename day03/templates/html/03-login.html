@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webA_login page</title>
+</head>
+<body>
+    <h1>我是 WebA 的登录页面</h1>
+    <form method="post">
+        <lable>用户名：</lable><input type="text" name="username"> <br>
+        <lable>密&nbsp;&nbsp;&nbsp;码：</lable><input type="password" name="password"> <br>
+        <input type="submit" value="登录">
+    </form>
+    <hr>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+</body>
+</html>
